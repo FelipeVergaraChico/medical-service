@@ -1,0 +1,77 @@
+
+
+/* Estilização da seção de login */
+.section {
+  max-width: 400px;
+  margin: 300px auto 0 auto;
+  background-color: #ffffff; /* Fundo branco para contraste */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+}
+
+/* Título da página de login */
+.h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00796b; /* Verde escuro, transmitindo confiança e profissionalismo */
+  text-align: center;
+}
+
+/* Estilização do formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilização dos inputs */
+input[type="text"], input[type="password"] {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0; /* Fundo cinza claro para suavizar */
+  color: #555; /* Texto em cinza suave */
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Estilização dos placeholders */
+input::placeholder {
+  color: #999;
+}
+
+/* Mudança de cor ao focar no input */
+input:focus {
+  border-color: #00796b; /* Verde escuro no foco */
+  background-color: #ffffff; /* Branco ao focar */
+  outline: none;
+}
+
+/* Estilização do botão de login */
+input[type="submit"] {
+  background-color: #00796b; /* Botão verde escuro */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover no botão de login */
+input[type="submit"]:hover {
+  background-color: #004d40; /* Verde mais escuro no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .section {
+    margin: 200px auto 0 auto;
+    padding: 20px;
+    width: 90%;
+  }
+}

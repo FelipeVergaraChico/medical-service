@@ -1,0 +1,208 @@
+/* CreateOrs.module.css */
+
+/* Definindo o fundo geral e a tipografia */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Seção principal */
+section {
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 40px auto;
+  transition: transform 0.2s ease-in-out;
+  width: 100%; /* Responsivo para telas menores */
+}
+
+/* Títulos */
+h1 {
+  color: #00796b;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #00796b;
+  padding-bottom: 8px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo dos controles de formulário */
+.formControl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #00796b;
+}
+
+/* Inputs de texto e data */
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #00796b;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.2s ease-in-out;
+}
+
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"] {
+  border-color: #004d40;
+  outline: none;
+}
+
+/* Botões */
+button,
+input[type="submit"] {
+  background-color: #00796b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #004d40;
+}
+
+/* Botão secundário (limpar assinatura) */
+.buttonClear {
+  background-color: transparent;
+  color: #00796b;
+  border: 2px solid #00796b;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.buttonClear:hover {
+  background-color: #e0f2f1;
+  color: #004d40;
+}
+
+/* Estilo para o campo de assinatura */
+.div_sig{
+  height: 400px;
+}
+
+.sigCanvas {
+  width: 100%; /* Mantém a largura 100% */
+  border: 2px dashed #00796b;
+  border-radius: 5px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  section {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"] {
+    padding: 10px;
+    font-size: 0.95em;
+  }
+
+  button,
+  input[type="submit"],
+  .buttonClear {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 1024){
+  .sigCanvas{
+    height: 100%;
+  }
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 768px) {
+
+
+  section {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"] {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  button,
+  input[type="submit"],
+  .buttonClear {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+
+}
+
+/* Responsividade para telas muito pequenas (ex: celulares antigos) */
+@media (max-width: 480px) {
+  section {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"] {
+    padding: 8px;
+    font-size: 0.85em;
+  }
+
+  button,
+  input[type="submit"],
+  .buttonClear {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+}

@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #FFff;
+}
+
+.header img {
+  width: 200px;
+}
+
+.header .hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.header .right-links {
+  display: flex;
+  align-items: center;
+}
+
+.header .right-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header .right-links li {
+  margin-right: 20px;
+}
+
+.header .right-links li:last-child {
+  margin-right: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto dentro do link */
+  width: 100%; /* Faz com que o link ocupe toda a largura do item */
+  gap: 10px;
+}
+
+.header a:hover {
+  color: #61dafb;
+}
+
+.header p {
+  margin: 0;
+  padding-left: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para o mobile */
+@media (max-width: 768px) {
+  .header .right-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #00796b;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    border-top: 2px solid #004d40; /* Adiciona uma borda superior estilizada */
+  }
+
+  .header h1 {
+    color: #fff;
+  }
+
+  .header .right-links.open {
+    height: auto; /* Abre o menu no mobile */
+  }
+
+  .header .right-links ul {
+    flex-direction: column;
+  }
+
+  .header .right-links li {
+    border-bottom: 1px solid #004d40; /* Adiciona uma borda inferior a cada item */
+    width: 100%;
+    padding: 1em 0;
+  }
+
+  .header .right-links li a {
+    height: 100%;
+  }
+
+  .header p{
+    font-size: 24px;
+  }
+
+  .header .hamburger {
+    display: block;
+  }
+
+  .header .right-links {
+    display: none;
+  }
+
+  .header .right-links.open {
+    display: flex;
+  }
+}
