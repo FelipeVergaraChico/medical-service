@@ -6,7 +6,7 @@ import styles from "./ViewOrs.module.css";
 import apiInstance from "../../../../utils/api";
 
 import SearchComponent from "../../../SearchBar/SearchBar";
-import Ors from "./Ors/ors";
+import Ors from "./Ors/Ors";
 
 export default function ViewOrs() {
   const [ors, setOrs] = useState([]);

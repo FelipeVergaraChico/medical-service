@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { VerifyUser } from "../../../hooks/VerifyUser";
-import Ors from "../Ors/View/Ors/ors";
+import Ors from "../Ors/View/Ors/Ors";
 import apiInstance from "../../../utils/api";
 import styles from "../Ors/View/ViewOrs.module.css";
 import SearchComponent from "../../SearchBar/SearchBarAdmin";
