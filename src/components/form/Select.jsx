@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from './select.module.css'
+import styles from './Select.module.css'
 export default function Select({text, name, options, handleOnChange, value}){
     return (
         <div className={styles.form_control}>
