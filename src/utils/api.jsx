@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const apiInstance = axios.create({
-    baseURL: "http://localhost:5000/"
+    baseURL: "https://medical-service-api.onrender.com/"
 });
 
 export default apiInstance;
