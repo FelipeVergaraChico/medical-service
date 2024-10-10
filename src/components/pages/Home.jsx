@@ -15,13 +15,13 @@ export default function Home() {
   return (
     <div>
       <h1 className={styles.homeTitle}>Home</h1>
-      {user && <p className={styles.welcomeMessage}>Welcome, {user.name}</p>}
+      {user && <p className={styles.welcomeMessage}>Bem-vindo, {user.name}</p>}
       
       {user ? (
         <>
           {user.position === "Admin" ? (
             <div className={styles.adminPanel}>
-              <h2>Admin Panel</h2>
+              <h2>Admin Painel</h2>
               <p>Aqui estão as ferramentas administrativas.</p>
               {/* Renderizar componentes ou botões exclusivos para admins */}
               <button className={styles.button}><Link to="/register">Registrar usuários</Link></button>
