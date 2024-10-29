@@ -143,6 +143,9 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 1024){
+  .div_sig{
+    height: 200px;
+  }
   .sigCanvas{
     height: 100%;
   }
