@@ -1,3 +1,5 @@
+/* CreateOrs.module.css */
+
 /* Definindo o fundo geral e a tipografia */
 body {
   font-family: 'Roboto', sans-serif;
@@ -61,9 +63,10 @@ input[type="datetime-local"] {
   transition: border-color 0.2s ease-in-out;
 }
 
+
 input[type="text"]:focus,
 input[type="date"]:focus,
-input[type="datetime-local"]:focus {
+input[type="datetime-local"] {
   border-color: #004d40;
   outline: none;
 }
@@ -104,12 +107,12 @@ input[type="submit"]:hover {
 }
 
 /* Estilo para o campo de assinatura */
-.div_sig {
+.div_sig{
   height: 400px;
 }
 
 .sigCanvas {
-  width: 100%;
+  width: 100%; /* Mantém a largura 100% */
   border: 2px dashed #00796b;
   border-radius: 5px;
 }
@@ -139,14 +142,16 @@ input[type="submit"]:hover {
   }
 }
 
-@media (max-width: 1024px) {
-  .sigCanvas {
-    height: 300px;
+@media (max-width: 1024){
+  .sigCanvas{
+    height: 100%;
   }
 }
 
 /* Responsividade para smartphones */
 @media (max-width: 768px) {
+
+
   section {
     padding: 20px;
   }
@@ -173,10 +178,7 @@ input[type="submit"]:hover {
     font-size: 0.9em;
   }
 
-  /* Ajuste de altura para o canvas em smartphones */
-  .sigCanvas {
-    height: 250px;
-  }
+
 }
 
 /* Responsividade para telas muito pequenas (ex: celulares antigos) */
@@ -202,9 +204,5 @@ input[type="submit"]:hover {
   .buttonClear {
     padding: 8px 12px;
     font-size: 0.85em;
-  }
-
-  .sigCanvas {
-    height: 200px;
   }
 }
