@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import styles from "./OrsForm.module.css";
 import Input from "./Input";
@@ -19,6 +19,20 @@ export default function OrsForm() {
   const token = localStorage.getItem("token") || "";
   const { setFlashMessage } = useFlashMessage();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (sigTechnicalCanvas.current) {
+        sigTechnicalCanvas.current.clear(); // ou outra lógica que você precise
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
 
   // Função para capturar assinatura do cliente
