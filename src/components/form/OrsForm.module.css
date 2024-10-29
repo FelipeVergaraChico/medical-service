@@ -108,7 +108,8 @@ input[type="submit"]:hover {
 
 /* Estilo para o campo de assinatura */
 .div_sig{
-  
+  display: flex;
+  justify-content: center;
 }
 
 .sigCanvas {

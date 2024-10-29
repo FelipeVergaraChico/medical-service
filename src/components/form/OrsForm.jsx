@@ -263,12 +263,11 @@ export default function OrsForm() {
 
         <h1>Assinatura do Técnico</h1>
         <div
-          style={{ border: "1px solid #111", width: "100%" }}
           className={styles.div_sig}
         >
           <SignatureCanvas
             penColor="black"
-            canvasProps={{ className: styles.sigCanvas }}
+            canvasProps={{ width: 500, className: styles.sigCanvas }}
             clearOnResize={false}
             ref={sigTechnicalCanvas}
             onEnd={saveTechnicalSignature} // Salva assinatura ao finalizar interação
@@ -296,12 +295,11 @@ export default function OrsForm() {
 
         <h1>Assinatura do Cliente</h1>
         <div
-          style={{ border: "1px solid #111", width: "100%" }}
           className={styles.div_sig}
         >
           <SignatureCanvas
             penColor="black"
-            canvasProps={{ className: styles.sigCanvas }}
+            canvasProps={{ width: 500, className: styles.sigCanvas }}
             clearOnResize={false}
             ref={sigClientCanvas}
             onEnd={saveClientSignature} // Salva assinatura ao finalizar interação
