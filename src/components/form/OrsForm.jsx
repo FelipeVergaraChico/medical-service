@@ -20,20 +20,6 @@ export default function OrsForm() {
   const { setFlashMessage } = useFlashMessage();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (sigTechnicalCanvas.current) {
-        sigTechnicalCanvas.current.clear(); // ou outra lógica que você precise
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
 
   // Função para capturar assinatura do cliente
   function saveClientSignature() {

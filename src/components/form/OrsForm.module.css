@@ -112,7 +112,6 @@ input[type="submit"]:hover {
 }
 
 .sigCanvas {
-  width: 100%; /* Mantém a largura 100% */
   border: 2px dashed #00796b;
   border-radius: 5px;
 }
