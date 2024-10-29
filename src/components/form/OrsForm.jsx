@@ -124,10 +124,10 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Fax:"
+          text="Cnpj:"
           type="text"
-          name="fax"
-          placeholder="Digite o Fax"
+          name="cnpj"
+          placeholder="Digite o cnpj"
           handleOnChange={handleChange}
         />
 
