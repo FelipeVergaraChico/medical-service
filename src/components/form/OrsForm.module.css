@@ -143,11 +143,6 @@ input[type="submit"]:hover {
   }
 }
 
-@media (max-width: 1024){
-  .div_sig{
-    height: 200px;
-  }
-}
 
 /* Responsividade para smartphones */
 @media (max-width: 768px) {
