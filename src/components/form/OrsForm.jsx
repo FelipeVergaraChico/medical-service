@@ -49,6 +49,7 @@ export default function OrsForm() {
 
   // Função para limpar a assinatura do técnico
   function handleClickClearSignTechnical() {
+    alert("Apagou")
     sigTechnicalCanvas.current.clear();
   }
 
@@ -294,11 +295,11 @@ export default function OrsForm() {
         <h1>Assinatura do Cliente</h1>
         <div
           style={{ border: "1px solid #111", width: "100%" }}
-          className={styles.dig_sig}
+          className={styles.div_sig}
         >
           <SignatureCanvas
             penColor="black"
-            canvasProps={{ height: 300, className: styles.sigCanvas }}
+            canvasProps={{ className: styles.sigCanvas }}
             ref={sigClientCanvas}
             onEnd={saveClientSignature} // Salva assinatura ao finalizar interação
           />
