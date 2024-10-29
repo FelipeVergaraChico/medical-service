@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import styles from "./OrsForm.module.css";
 import Input from "./Input";
