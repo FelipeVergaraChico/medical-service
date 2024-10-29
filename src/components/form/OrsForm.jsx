@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import styles from "./OrsForm.module.css";
 import Input from "./Input";
@@ -23,7 +23,9 @@ export default function OrsForm() {
   // Função para capturar assinatura do cliente
   function saveClientSignature() {
     if (sigClientCanvas.current) {
-      const clientUrl = sigClientCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+      const clientUrl = sigClientCanvas.current
+        .getTrimmedCanvas()
+        .toDataURL("image/png");
       setUrlClient(clientUrl);
       setOrs((prevOrs) => ({ ...prevOrs, clientSign: clientUrl }));
     }
@@ -32,42 +34,25 @@ export default function OrsForm() {
   // Função para capturar assinatura do técnico
   function saveTechnicalSignature() {
     if (sigTechnicalCanvas.current) {
-      const technicalUrl = sigTechnicalCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+      const technicalUrl = sigTechnicalCanvas.current
+        .getTrimmedCanvas()
+        .toDataURL("image/png");
       setUrlTechnical(technicalUrl);
       setOrs((prevOrs) => ({ ...prevOrs, technicalSign: technicalUrl }));
     }
   }
 
-  useEffect(() => {
-    if (urlClient && sigClientCanvas.current) {
-      const ctx = sigClientCanvas.current.getCanvas().getContext("2d");
-      const img = new Image();
-      img.src = urlClient;
-      img.onload = () => ctx.drawImage(img, 0, 0);
-    }
-  }, [urlClient]);
-
-  // Função para carregar a assinatura do técnico, se existir
-  useEffect(() => {
-    if (urlTechnical && sigTechnicalCanvas.current) {
-      const ctx = sigTechnicalCanvas.current.getCanvas().getContext("2d");
-      const img = new Image();
-      img.src = urlTechnical;
-      img.onload = () => ctx.drawImage(img, 0, 0);
-    }
-  }, [urlTechnical]);
-
   // Função para limpar a assinatura do cliente
   function handleClickClearSignClient() {
     sigClientCanvas.current.clear();
-    setUrlClient(""); // Limpa a URL armazenada
   }
 
   // Função para limpar a assinatura do técnico
   function handleClickClearSignTechnical() {
+    alert("Apagou")
     sigTechnicalCanvas.current.clear();
-    setUrlTechnical(""); // Limpa a URL armazenada
   }
+
 
   // Funções para Inputs e Submits
   function handleChange(e) {
@@ -81,18 +66,18 @@ export default function OrsForm() {
     let msgType = "success";
 
     const data = await apiInstance
-      .post("ors/add", ors, {
-        Authorization: `Bearer ${JSON.parse(token)}`,
-        "Content-Type": "multipart/form-data",
-      })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((err) => {
-        msgType = "error";
-        return err.response.data;
-      });
-
+    .post("ors/add", ors, {
+      Authorization: `Bearer ${JSON.parse(token)}`,
+      "Content-Type": "multipart/form-data",
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      msgType = "error";
+      return err.response.data;
+    });
+    
 
     setFlashMessage(data.message, msgType);
 
@@ -263,25 +248,28 @@ export default function OrsForm() {
           handleOnChange={handleChange}
         />
 
-        <Select
-          name="status"
-          text="Selecione o status da ORS"
-          options={[
-            "Em andamento",
-            "Manutenção Preventiva",
-            "Manutenção Corretiva",
-          ]}
-          handleOnChange={handleChange}
-          value={ors.status || ""}
-        />
+          <Select
+                name="status"
+                text="Selecione o status da ORS"
+                options={[
+                  "Em andamento" ,
+                  "Manutenção Preventiva",
+                  "Manutenção Corretiva",
+                ]}
+                handleOnChange={handleChange}
+                value={ors.status || ""}
+            /> 
 
         <h1>Assinatura do Técnico</h1>
-        <div style={{ border: "1px solid #111", width: "100%" }} className={styles.div_sig}>
+        <div
+          style={{ border: "1px solid #111", width: "100%" }}
+          className={styles.div_sig}
+        >
           <SignatureCanvas
             penColor="black"
             canvasProps={{ className: styles.sigCanvas }}
             ref={sigTechnicalCanvas}
-            onEnd={saveTechnicalSignature}
+            onEnd={saveTechnicalSignature} // Salva assinatura ao finalizar interação
           />
         </div>
         <button type="button" onClick={handleClickClearSignTechnical}>
@@ -305,12 +293,15 @@ export default function OrsForm() {
         />
 
         <h1>Assinatura do Cliente</h1>
-        <div style={{ border: "1px solid #111", width: "100%" }} className={styles.div_sig}>
+        <div
+          style={{ border: "1px solid #111", width: "100%" }}
+          className={styles.div_sig}
+        >
           <SignatureCanvas
             penColor="black"
             canvasProps={{ className: styles.sigCanvas }}
             ref={sigClientCanvas}
-            onEnd={saveClientSignature}
+            onEnd={saveClientSignature} // Salva assinatura ao finalizar interação
           />
         </div>
         <button type="button" onClick={handleClickClearSignClient}>
