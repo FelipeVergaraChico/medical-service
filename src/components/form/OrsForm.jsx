@@ -44,6 +44,7 @@ export default function OrsForm() {
 
   // Função para limpar a assinatura do cliente
   function handleClickClearSignClient() {
+    console.log("Apagou")
     sigClientCanvas.current.clear();
   }
 
