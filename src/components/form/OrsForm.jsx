@@ -50,7 +50,6 @@ export default function OrsForm() {
 
   // Função para limpar a assinatura do técnico
   function handleClickClearSignTechnical() {
-    alert("Apagou")
     sigTechnicalCanvas.current.clear();
   }
 
