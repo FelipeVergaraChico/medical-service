@@ -302,6 +302,7 @@ export default function OrsForm() {
           <SignatureCanvas
             penColor="black"
             canvasProps={{ className: styles.sigCanvas }}
+            clearOnResize={false}
             ref={sigClientCanvas}
             onEnd={saveClientSignature} // Salva assinatura ao finalizar interação
           />
