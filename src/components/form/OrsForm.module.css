@@ -204,7 +204,6 @@ input[type="submit"]:hover {
     font-size: 0.85em;
   }
 
-  /* Ajuste de altura para o canvas em telas muito pequenas */
   .sigCanvas {
     height: 200px;
   }
