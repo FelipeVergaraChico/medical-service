@@ -30,7 +30,7 @@ export default function Ors({ ors }){
                     <button className={styles.actionButton} onClick={() => handleClick(or)}>
                         <FaFileDownload /> <span>Baixar PDF</span>
                     </button>
-                    <Link className={styles.actionButton} to={`ors/myors/edit/${or._id}`}><FaEdit />Editar</Link>
+                    <Link className={styles.actionButton} to={`edit/${or._id}`}><FaEdit />Editar</Link>
                 </div>
                 </div>
             ))}
