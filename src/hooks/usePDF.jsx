@@ -74,6 +74,7 @@ export const GeneratePDF = () => {
     currentHeight += 10;
 
     if(or.dateCall){
+      console.log(or.dateCall)
       or.dateCall = formatDate(or.dateCall)
     }
 
