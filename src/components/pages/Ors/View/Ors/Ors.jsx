@@ -3,6 +3,7 @@ import { FaFileDownload } from "react-icons/fa";
 import styles from "./Ors.module.css";
 import { GeneratePDF } from "../../../../../hooks/usePDF";
 import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Ors({ ors }){
     const { generateDocument } = GeneratePDF();
