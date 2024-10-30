@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import styles from "./OrsForm.module.css";
-import Input from "./Input";
+import styles from "../../../../form/OrsForm.module.css";
+import Input from "../../../../form/Input";
 import { useNavigate, useParams } from "react-router-dom";
-import apiInstance from "../../utils/api";
-import useFlashMessage from "../../hooks/useFlashMessage";
-import Select from "./Select";
+import apiInstance from "../../../../../utils/api";
+import useFlashMessage from "../../../../../hooks/useFlashMessage";
+import Select from "../../../../form/Select";
 import { VerifyUser } from "../../../../../hooks/VerifyUser";
 
 export default function EditOrs() {
