@@ -28,7 +28,7 @@ export default function EditOrs() {
             },
             })
             .then((response) => {
-                setOrs(response.data.ors[0])
+                setOrs(response.data.ors)
                 console.log(response)
             })
             .catch((error) => {
