@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import styles from "../../../../form/OrsForm.module.css";
+import styles from "./EditOrs.module.css";
 import Input from "../../../../form/Input";
 import { useNavigate, useParams } from "react-router-dom";
 import apiInstance from "../../../../../utils/api";
