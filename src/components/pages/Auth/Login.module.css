@@ -3,7 +3,7 @@
 /* Estilização da seção de login */
 .section {
   max-width: 400px;
-  margin: 150px auto 0 auto;
+  margin: 3em auto 0 auto;
   background-color: #ffffff; /* Fundo branco para contraste */
   padding: 30px;
   border-radius: 10px;
