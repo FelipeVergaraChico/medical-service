@@ -48,7 +48,28 @@ export const VerifyUser = () => {
         navigate("/");  // Redireciona para login em caso de erro
       });
   }
+
+  async function verifyOrsUser(idOrs, token){
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    await apiInstance
+      .get(`/users/checkOrsUser/${idOrs}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,  // Token sem JSON.parse()
+        },
+      })
+      .then((response) => {
+        setUser(response.data.response)  // Armazena os dados do usuário
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar dados do admin:", error.response?.data || error.message);
+        navigate("/");  // Redireciona para login em caso de erro
+      });
+  }
   
 
-  return { verifyUser, verifyUserAdmin, user, setUser };  // Retorna a função de verificação e os dados do usuário
+  return { verifyUser, verifyUserAdmin, verifyOrsUser, user, setUser };  // Retorna a função de verificação e os dados do usuário
 };
