@@ -91,7 +91,7 @@ export default function OrsForm() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <h1 className={styles.h1}>Dados do Cliente</h1>
         <Input
-          text="Cliente:"
+          text="* Cliente:"
           type="text"
           name="client"
           placeholder="Digite o nome do cliente"
@@ -107,7 +107,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Endereço:"
+          text="* Endereço:"
           type="text"
           name="address"
           placeholder="Digite o Endereço"
@@ -172,7 +172,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Marca:"
+          text="* Marca:"
           type="text"
           name="brand"
           placeholder="Digite a marca"
@@ -180,7 +180,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Modelo:"
+          text="* Modelo:"
           type="text"
           name="model"
           placeholder="Digite o modelo"
@@ -196,7 +196,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Numero de patrimônio:"
+          text="* Numero de patrimônio:"
           type="text"
           name="inventoryNumber"
           placeholder="Digite o patrimonio"
@@ -204,7 +204,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="Acessórios:"
+          text="* Acessórios:"
           type="text"
           name="accessories"
           placeholder="Digite os Acessórios"
@@ -232,7 +232,7 @@ export default function OrsForm() {
         <h1>Serviços Realizados</h1>
 
         <Input
-          text="Serviços Realizados"
+          text="* Serviços Realizados:"
           type="text"
           name="realizedServices"
           placeholder="Digite os Serviços Realizados"
@@ -268,7 +268,7 @@ export default function OrsForm() {
           value={ors.status || ""}
         />
 
-        <h1>Assinatura do Técnico</h1>
+        <h1>Assinatura do Técnico *</h1>
         <div
           className={styles.div_sig}
         >
@@ -285,7 +285,7 @@ export default function OrsForm() {
         </button>
 
         <Input
-          text="Nome do Assinante:"
+          text="* Nome do Assinante:"
           type="text"
           name="nameTechSign"
           placeholder="Digite o nome do Assinante"
@@ -300,7 +300,7 @@ export default function OrsForm() {
           handleOnChange={handleChange}
         />
 
-        <h1>Assinatura do Cliente</h1>
+        <h1>Assinatura do Cliente *</h1>
         <div
           className={styles.div_sig}
         >
@@ -317,7 +317,7 @@ export default function OrsForm() {
         </button>
 
         <Input
-          text="Nome do Assinante:"
+          text="* Nome do Assinante:"
           type="text"
           name="nameClientSign"
           placeholder="Digite o nome do Assinante"
