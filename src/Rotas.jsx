@@ -10,6 +10,7 @@ import Header from "./components/layout/Header";
 import ViewOrs from "./components/pages/Ors/View/ViewOrs";
 import Users from "./components/pages/Users/Users";
 import OrsUsers from "./components/pages/Users/OrsUsers";
+import EditOrs from "./components/pages/Ors/View/EditOrs/EditOrs";
 
 export default function Rotas() {
   return (
@@ -26,6 +27,7 @@ export default function Rotas() {
                     <Route path="/users/:id" element={<OrsUsers />} />
                     <Route path="/ors/add" element={<CreateOrs />} />
                     <Route path="/ors/myors" element={<ViewOrs />} />
+                    <Route path="/ors/myors/edit/:id" element={<EditOrs />} />
                 </Routes>
         </UserProvider>
       </BrowserRouter>
