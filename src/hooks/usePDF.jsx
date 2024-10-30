@@ -34,6 +34,13 @@ export const GeneratePDF = () => {
         .padStart(2, '0')}/${date.getFullYear()}`;
     };
 
+    const formatDateDelivery = (dateString) => {
+      // Divide a string da data no formato yyyy-mm-dd
+      const [year, month, day] = dateString.split('-');
+      // Retorna a data no formato dd/mm/yyyy
+      return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+  };
+
     const marginLeft = 10;
     let currentHeight = 40; // Starting height position (ajuste para não sobrepor a logo)
 
@@ -125,8 +132,7 @@ export const GeneratePDF = () => {
     currentHeight += 40; // Espaço extra antes das assinaturas
 
     let dateDeliveryHeight = currentHeight + 20;
-    console.log(or.dateDelivery)
-    dateDeliveryHeight += addField("Data de Entrega", formatDate(or.dateDelivery), sectionRightX, serviceHeight);
+    dateDeliveryHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, serviceHeight);
     // Assinaturas
     if (or.clientSign && or.technicalSign) {
       addSectionTitle("Assinaturas", marginLeft, serviceHeight);
