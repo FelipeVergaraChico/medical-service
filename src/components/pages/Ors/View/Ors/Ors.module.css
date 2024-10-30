@@ -38,7 +38,10 @@
     flex-direction: row;
     gap: 16px;
   }
-
+  
+  .orsButtons a{
+    text-decoration: none;
+  }
 
   /* Botões de ação (opcional) */
   .actionButton {
