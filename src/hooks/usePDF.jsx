@@ -29,9 +29,14 @@ export const GeneratePDF = () => {
     // Helper function to format date
     const formatDate = (dateString) => {
       const date = new Date(dateString);
-      return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
+      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
         .toString()
         .padStart(2, '0')}/${date.getFullYear()}`;
+      const formattedTime = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes()
+        .toString()
+        .padStart(2, '0')}`;
+      
+      return `${formattedDate}--${formattedTime}`;
     };
 
     const formatDateDelivery = (dateString) => {
