@@ -73,6 +73,10 @@ export const GeneratePDF = () => {
     addSectionTitle("Dados do Equipamento", sectionRightX, currentHeight);
     currentHeight += 10;
 
+    if(or.dateCall){
+      or.dateCall = formatDate(or.dateCall)
+    }
+
     // Campos do cliente (lado esquerdo)
     currentHeight += addField("Cliente", or.client, sectionLeftX, currentHeight);
     currentHeight += addField("Contato", or.contact, sectionLeftX, currentHeight);
@@ -80,7 +84,7 @@ export const GeneratePDF = () => {
     currentHeight += addField("Telefone", or.phone, sectionLeftX, currentHeight);
     currentHeight += addField("Cnpj", or.cnpj, sectionLeftX, currentHeight);
     currentHeight += addField("Email", or.email, sectionLeftX, currentHeight);
-    currentHeight += addField("Data do Chamado", formatDate(or.dateCall) || "", sectionLeftX, currentHeight);
+    currentHeight += addField("Data do Chamado", or.dateCall, sectionLeftX, currentHeight);
     currentHeight += addField("Duração", or.duration, sectionLeftX, currentHeight);
 
     // Campos do equipamento (lado direito)
