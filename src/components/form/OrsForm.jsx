@@ -66,18 +66,18 @@ export default function OrsForm() {
     let msgType = "success";
 
     const data = await apiInstance
-    .post("ors/add", ors, {
-      Authorization: `Bearer ${JSON.parse(token)}`,
-      "Content-Type": "multipart/form-data",
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((err) => {
-      msgType = "error";
-      return err.response.data;
-    });
-    
+      .post("ors/add", ors, {
+        Authorization: `Bearer ${JSON.parse(token)}`,
+        "Content-Type": "multipart/form-data",
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        msgType = "error";
+        return err.response.data;
+      });
+
 
     setFlashMessage(data.message, msgType);
 
@@ -160,6 +160,14 @@ export default function OrsForm() {
           type="text"
           name="equipment"
           placeholder="Digite o Equipamento"
+          handleOnChange={handleChange}
+        />
+
+        <Input
+          text="Local/Sala:"
+          type="text"
+          name="local"
+          placeholder="Digite o Local"
           handleOnChange={handleChange}
         />
 
@@ -248,17 +256,17 @@ export default function OrsForm() {
           handleOnChange={handleChange}
         />
 
-          <Select
-                name="status"
-                text="Selecione o status da ORS"
-                options={[
-                  "Em andamento" ,
-                  "Manutenção Preventiva",
-                  "Manutenção Corretiva",
-                ]}
-                handleOnChange={handleChange}
-                value={ors.status || ""}
-            /> 
+        <Select
+          name="status"
+          text="Selecione o status da ORS"
+          options={[
+            "Em andamento",
+            "Manutenção Preventiva",
+            "Manutenção Corretiva",
+          ]}
+          handleOnChange={handleChange}
+          value={ors.status || ""}
+        />
 
         <h1>Assinatura do Técnico</h1>
         <div

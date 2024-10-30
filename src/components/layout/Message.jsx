@@ -22,7 +22,7 @@ function Message() {
                     setVisibility(false); // Oculta a mensagem após a transição
                     setIsHiding(false); // Reseta o estado de hiding
                 }, 300); // O tempo da transição precisa ser o mesmo definido no CSS
-            }, 3000);
+            }, 20000);
         };
 
         bus.addListener("flash", showFlashMessage);

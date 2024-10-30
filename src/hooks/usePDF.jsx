@@ -86,6 +86,7 @@ export const GeneratePDF = () => {
     // Campos do equipamento (lado direito)
     let equipmentHeight = 50; // Reinicia altura para a seção direita
     equipmentHeight += addField("Equipamento", or.equipment, sectionRightX, equipmentHeight);
+    equipmentHeight += addField("Local/Sala", or.local, sectionRightX, equipmentHeight);
     equipmentHeight += addField("Marca", or.brand, sectionRightX, equipmentHeight);
     equipmentHeight += addField("Modelo", or.model, sectionRightX, equipmentHeight);
     equipmentHeight += addField("Número de Série", or.serial, sectionRightX, equipmentHeight);

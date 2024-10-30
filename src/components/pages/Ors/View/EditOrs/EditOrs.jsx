@@ -24,9 +24,9 @@ export default function EditOrs() {
         // Pegar Ors
         apiInstance.get(`ors/edit/${id}`, {
             headers: {
-              Authorization: `Bearer ${JSON.parse(token)}`,  // Token sem JSON.parse()
+                Authorization: `Bearer ${JSON.parse(token)}`,  // Token sem JSON.parse()
             },
-            })
+        })
             .then((response) => {
                 setOrs(response.data.ors)
                 console.log(response)
@@ -154,6 +154,15 @@ export default function EditOrs() {
                     placeholder="Digite o Equipamento"
                     handleOnChange={handleChange}
                     value={ors.equipment}
+                />
+
+                <Input
+                    text="Local/Sala:"
+                    type="text"
+                    name="local"
+                    placeholder="Digite o Local"
+                    handleOnChange={handleChange}
+                    value={ors.local}
                 />
 
                 <Input
