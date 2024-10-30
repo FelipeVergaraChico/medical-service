@@ -74,7 +74,6 @@ export const GeneratePDF = () => {
     currentHeight += 10;
 
     if(or.dateCall){
-      console.log(or.dateCall)
       or.dateCall = formatDate(or.dateCall)
     }
 
@@ -126,6 +125,7 @@ export const GeneratePDF = () => {
     currentHeight += 40; // Espaço extra antes das assinaturas
 
     let dateDeliveryHeight = currentHeight + 20;
+    console.log(or.dateDelivery)
     dateDeliveryHeight += addField("Data de Entrega", formatDate(or.dateDelivery), sectionRightX, serviceHeight);
     // Assinaturas
     if (or.clientSign && or.technicalSign) {
