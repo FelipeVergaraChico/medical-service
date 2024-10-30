@@ -55,17 +55,22 @@ body {
 }
 
 /* Botão padrão */
-.button {
-  display: block;
-  margin: 1.5rem auto;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: white;
+.buttons{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 1em 0;
+}
+
+.button{
   background-color: var(--primary-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  border-radius: 12px;
+  color: #FFF;
+  text-decoration: none;
+  padding: 1em;
+  text-align: center;
+  width: 200px;
 }
 
 .button:hover {

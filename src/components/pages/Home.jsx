@@ -24,8 +24,10 @@ export default function Home() {
               <h2>Painel do Administrador</h2>
               <p>Aqui estão as ferramentas administrativas.</p>
               {/* Renderizar componentes ou botões exclusivos para admins */}
-              <button className={styles.button}><Link to="/register">Registrar usuários</Link></button>
-              <button className={styles.button}><Link to="/users">Usuarios registrados</Link></button>
+              <div className={styles.buttons}>
+                <Link to="/register" className={styles.button}>Registrar usuários</Link>
+                <Link to="/users" className={styles.button}>Usuarios registrados</Link>
+              </div>
             </div>
           ) : (
             <p className={styles.permissionMessage}>Você não tem permissão para acessar o painel de admin.</p>
