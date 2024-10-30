@@ -204,7 +204,7 @@ export default function OrsForm() {
         />
 
         <Input
-          text="* Acessórios:"
+          text="Acessórios:"
           type="text"
           name="accessories"
           placeholder="Digite os Acessórios"
