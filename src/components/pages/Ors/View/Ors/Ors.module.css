@@ -33,6 +33,19 @@
     line-height: 1.6;
   }
   
+  .orsButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .orsButtons a{
+    background-color: #45a049;
+    color: #FFF;
+    padding: 0.5em;
+    text-decoration: none;
+  }
+
   /* Botões de ação (opcional) */
   .actionButton {
     background-color: #4CAF50;

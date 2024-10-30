@@ -2,6 +2,7 @@
 import { FaFileDownload } from "react-icons/fa";
 import styles from "./Ors.module.css";
 import { GeneratePDF } from "../../../../../hooks/usePDF";
+import { FaEdit } from "react-icons/fa";
 
 export default function Ors({ ors }){
     const { generateDocument } = GeneratePDF();
@@ -24,9 +25,12 @@ export default function Ors({ ors }){
                     {new Date(new Date(or.dateDelivery).getTime() + new Date(or.dateDelivery).getTimezoneOffset() * 60000).toLocaleDateString("pt-BR")}
                 </p>
                 <p className={styles.orsDetails}>Status: {or.status}</p>
-                <button className={styles.actionButton} onClick={() => handleClick(or)}>
-                    <FaFileDownload /> <span>Baixar PDF</span>
-                </button>
+                <div className={styles.orsButtons}>
+                    <button className={styles.actionButton} onClick={() => handleClick(or)}>
+                        <FaFileDownload /> <span>Baixar PDF</span>
+                    </button>
+                    <Link to={`/edit/${or._id}`}><FaEdit />Editar</Link>
+                </div>
                 </div>
             ))}
 
