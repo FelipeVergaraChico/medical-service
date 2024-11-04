@@ -135,7 +135,6 @@ button:hover,
     font-size: 0.95em;
   }
 
-  button,
   .section input[type="submit"],
   .buttonClear {
     padding: 10px 15px;
@@ -167,7 +166,6 @@ button:hover,
     font-size: 0.9em;
   }
 
-  button,
   .section input[type="submit"],
   .buttonClear {
     padding: 10px 15px;
@@ -195,7 +193,6 @@ button:hover,
     font-size: 0.85em;
   }
 
-  button,
   .section input[type="submit"],
   .buttonClear {
     padding: 8px 12px;
