@@ -125,11 +125,11 @@ export const GeneratePDF = () => {
     currentHeight += 30; // Espaço para passar para a próxima seção
 
     // Serviços Realizados lado a lado
-    let serviceHeight = currentHeight + 50;
+    let serviceHeight = currentHeight + 10;
     addSectionTitle("Serviços Realizados", sectionLeftX, currentHeight);
     serviceHeight += addField("Serviços", or.realizedServices, sectionLeftX, serviceHeight);
     
-    let quantityHeight = currentHeight + 50;
+    let quantityHeight = currentHeight + 10;
     addSectionTitle("Componentes Aplicados", sectionRightX, currentHeight);
     quantityHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, quantityHeight);
     quantityHeight += addField("Quantidade", or.quantify, sectionRightX, quantityHeight);
