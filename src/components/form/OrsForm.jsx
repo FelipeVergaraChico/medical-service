@@ -166,7 +166,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Input
-          text="Marca:"
+          text="* Marca:"
           type="text"
           name="brand"
           placeholder="Digite a marca"
