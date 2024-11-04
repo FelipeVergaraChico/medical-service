@@ -13,6 +13,10 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   const sigClientCanvas = useRef(null);
   const sigTechnicalCanvas = useRef(null);
 
+  useEffect(() => {
+    console.log(ors, orsData)
+  })
+
 
   // Função para capturar assinatura do cliente
   function saveClientSignature() {
@@ -49,7 +53,6 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
 
   // Funções para Inputs e Submits
   function handleChange(e) {
-    console.log(ors)
     setOrs({ ...ors, [e.target.name]: e.target.value });
   }
 
