@@ -88,7 +88,6 @@ export const GeneratePDF = () => {
     if (or.dateCall) {
       or.dateCall = formatDate(or.dateCall)
     }
-    console.log(or)
 
     // Campos do cliente (lado esquerdo)
     currentHeight += addField("Cliente", or.client, sectionLeftX, currentHeight);
