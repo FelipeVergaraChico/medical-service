@@ -88,6 +88,7 @@ export const GeneratePDF = () => {
     if (or.dateCall) {
       or.dateCall = formatDate(or.dateCall)
     }
+    console.log(or)
 
     // Campos do cliente (lado esquerdo)
     currentHeight += addField("Cliente", or.client, sectionLeftX, currentHeight);
@@ -144,7 +145,7 @@ export const GeneratePDF = () => {
 
     // Posiciona a Data de Entrega na mesma linha, alinhada à direita
     doc.setFontSize(11);
-    doc.text(`Data de Entrega: ${formatDateDelivery(or.dateDelivery)}`, 160, currentHeight);  // Ajuste 160 para posicionamento à direita
+    doc.text(`Data de Entrega: ${formatDateDelivery(or.dateDelivery)}`, sectionRightX, currentHeight);  // Ajuste 160 para posicionamento à direita
 
     currentHeight += 10; // Pequeno espaço para colocar as assinaturas abaixo
 
