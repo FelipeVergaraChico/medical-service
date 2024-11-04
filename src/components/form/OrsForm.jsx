@@ -59,7 +59,9 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   function submit(e){
     e.preventDefault()
 
-    handleSubmit(ors)
+    console.log(ors)
+
+    //handleSubmit(ors)
   }
 
   return (
