@@ -33,7 +33,7 @@ export default function EditOrs() {
                 console.error("Erro ao buscar a ORS");
                 navigate("/");  // Redireciona para login em caso de erro
             })
-    }, [token, navigate]);
+    }, [token, navigate, id]);
 
     useEffect(() => {
         verifyUser(token)
@@ -67,7 +67,7 @@ export default function EditOrs() {
 
     return (
         <section>
-            <OrsForm HandleSubmit={updateOrs} orsData={ors} btnText="Editar ORS" />
+            <OrsForm handleSubmit={updateOrs} orsData={ors} btnText="Editar ORS" />
         </section>
     );
 }

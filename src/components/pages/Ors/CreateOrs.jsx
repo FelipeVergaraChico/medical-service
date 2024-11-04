@@ -44,7 +44,7 @@ export default function CreateOrs() {
 
   return (
     <section>
-      <OrsForm HandleSubmit={registerOrs} btnText="Enviar ORS" />
+      <OrsForm handleSubmit={registerOrs} btnText="Enviar ORS" />
     </section>
   );
 }

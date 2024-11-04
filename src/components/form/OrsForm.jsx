@@ -5,7 +5,7 @@ import styles from "./OrsForm.module.css";
 import Input from "./Input";
 import Select from "./Select";
 
-export default function OrsForm({ HandleSubmit, orsData, btnText }) {
+export default function OrsForm({ handleSubmit, orsData, btnText }) {
   const [ors, setOrs] = useState(orsData || {});
   const [urlClient, setUrlClient] = useState("");
   const [urlTechnical, setUrlTechnical] = useState("");
@@ -49,13 +49,18 @@ export default function OrsForm({ HandleSubmit, orsData, btnText }) {
 
   // Funções para Inputs e Submits
   function handleChange(e) {
-    console.log(orsData)
     setOrs({ ...ors, [e.target.name]: e.target.value });
+  }
+
+  function submit(e){
+    e.preventDefault()
+
+    handleSubmit(pet)
   }
 
   return (
     <section className={styles.section}>
-      <form onSubmit={HandleSubmit} className={styles.form}>
+      <form onSubmit={submit} className={styles.form}>
         <h1 className={styles.h1}>Dados do Cliente</h1>
         <Input
           text="Cliente:"
