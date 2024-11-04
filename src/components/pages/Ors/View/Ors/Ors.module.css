@@ -1,3 +1,7 @@
+.container{
+  width: 80%;
+}
+
 .orsCard {
     background-color: white;
     border-radius: 8px;
@@ -84,6 +88,10 @@
   
   /* Responsividade */
   @media (max-width: 768px) {
+    .container{
+      width: 100%;
+    }
+
     .orsCard {
       width: 90%;
     }
