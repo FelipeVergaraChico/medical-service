@@ -49,6 +49,7 @@ export default function OrsForm({ HandleSubmit, orsData, btnText }) {
 
   // Funções para Inputs e Submits
   function handleChange(e) {
+    console.log(orsData)
     setOrs({ ...ors, [e.target.name]: e.target.value });
   }
 
