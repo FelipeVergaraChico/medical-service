@@ -1,4 +1,9 @@
-.form input[type="text"], .form input[type="password"] .form input[type="date"] {
+.form div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="date"] {
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
