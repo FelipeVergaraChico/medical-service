@@ -49,7 +49,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   // Função para limpar a assinatura do cliente
   function handleClickClearSignClient() {
     sigClientCanvas.current.clear();
-    setOrs({ ...ors, technicalSign: "" });
+    setOrs({ ...ors, clientSign: "" });
   }
 
   // Função para limpar a assinatura do técnico
