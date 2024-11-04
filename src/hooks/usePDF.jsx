@@ -125,11 +125,11 @@ export const GeneratePDF = () => {
     currentHeight += 30; // Espaço para passar para a próxima seção
 
     // Serviços Realizados lado a lado
-    let serviceHeight = currentHeight + 10;
+    let serviceHeight = currentHeight + 50;
     addSectionTitle("Serviços Realizados", sectionLeftX, currentHeight);
     serviceHeight += addField("Serviços", or.realizedServices, sectionLeftX, serviceHeight);
     
-    let quantityHeight = currentHeight + 10;
+    let quantityHeight = currentHeight + 50;
     addSectionTitle("Componentes Aplicados", sectionRightX, currentHeight);
     quantityHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, quantityHeight);
     quantityHeight += addField("Quantidade", or.quantify, sectionRightX, quantityHeight);
@@ -140,7 +140,7 @@ export const GeneratePDF = () => {
 
     currentHeight += 40; // Espaço extra antes das assinaturas
 
-    let dateDeliveryHeight = currentHeight + 50;
+    let dateDeliveryHeight = currentHeight + 20;
     dateDeliveryHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, serviceHeight);
     // Assinaturas
     if (or.clientSign && or.technicalSign) {
