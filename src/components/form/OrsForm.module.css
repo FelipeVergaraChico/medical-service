@@ -90,22 +90,6 @@ button:hover,
   background-color: #004d40;
 }
 
-/* Botão secundário (limpar assinatura) */
-.buttonClear {
-  background-color: transparent;
-  color: #00796b;
-  border: 2px solid #00796b;
-  padding: 12px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.buttonClear:hover {
-  background-color: #e0f2f1;
-  color: #004d40;
-}
-
 /* Estilo para o campo de assinatura */
 .div_sig{
   display: flex;
@@ -134,12 +118,6 @@ button:hover,
     padding: 10px;
     font-size: 0.95em;
   }
-
-  .section input[type="submit"],
-  .buttonClear {
-    padding: 10px 15px;
-    font-size: 0.95em;
-  }
 }
 
 
@@ -166,13 +144,6 @@ button:hover,
     font-size: 0.9em;
   }
 
-  .section input[type="submit"],
-  .buttonClear {
-    padding: 10px 15px;
-    font-size: 0.9em;
-  }
-
-
 }
 
 /* Responsividade para telas muito pequenas (ex: celulares antigos) */
@@ -190,12 +161,6 @@ button:hover,
   .section input[type="date"],
   .section input[type="datetime-local"] {
     padding: 8px;
-    font-size: 0.85em;
-  }
-
-  .section input[type="submit"],
-  .buttonClear {
-    padding: 8px 12px;
     font-size: 0.85em;
   }
 }
