@@ -27,7 +27,6 @@ export default function EditOrs() {
         })
             .then((response) => {
                 setOrs(response.data.ors)
-                console.log(response)
             })
             .catch((error) => {
                 console.error("Erro ao buscar a ORS");
@@ -67,7 +66,9 @@ export default function EditOrs() {
 
     return (
         <section>
-            <OrsForm handleSubmit={updateOrs} orsData={ors} btnText="Editar ORS" />
+            {ors.client && (
+                <OrsForm handleSubmit={updateOrs} orsData={ors} btnText="Editar ORS" />
+            )}
         </section>
     );
 }
