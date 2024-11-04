@@ -17,9 +17,11 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   useEffect(() => {
     if (orsData?.clientSign && sigClientCanvas.current) {
       sigClientCanvas.current.fromDataURL(orsData.clientSign);
+      setOrs({ ...ors, clientSign: "" });
     }
     if (orsData?.technicalSign && sigTechnicalCanvas.current) {
       sigTechnicalCanvas.current.fromDataURL(orsData.technicalSign);
+      setOrs({ ...ors, technicalSign: "" });
     }
   }, [orsData]);
 
