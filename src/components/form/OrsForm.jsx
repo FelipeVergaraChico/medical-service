@@ -10,8 +10,8 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   const [urlClient, setUrlClient] = useState("");
   const [urlTechnical, setUrlTechnical] = useState("");
 
-  const sigClientCanvas = useRef(ors.clientSign || null);
-  const sigTechnicalCanvas = useRef(ors.technicalSign || null);
+  const sigClientCanvas = useRef(orsData.clientSign || null);
+  const sigTechnicalCanvas = useRef(orsData.technicalSign || null);
 
 
   // Função para capturar assinatura do cliente
