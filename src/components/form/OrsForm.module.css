@@ -10,7 +10,7 @@ body {
 }
 
 /* Seção principal */
-section {
+.section {
   padding: 40px;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -51,9 +51,9 @@ label {
 }
 
 /* Inputs de texto e data */
-input[type="text"],
-input[type="date"],
-input[type="datetime-local"] {
+.section input[type="text"],
+.section input[type="date"],
+.section input[type="datetime-local"] {
   width: 100%;
   padding: 12px;
   border: 2px solid #00796b;
@@ -64,16 +64,16 @@ input[type="datetime-local"] {
 }
 
 
-input[type="text"]:focus,
-input[type="date"]:focus,
-input[type="datetime-local"] {
+.section input[type="text"]:focus,
+.section input[type="date"]:focus,
+.section input[type="datetime-local"] {
   border-color: #004d40;
   outline: none;
 }
 
 /* Botões */
 button,
-input[type="submit"] {
+.section input[type="submit"] {
   background-color: #00796b;
   color: white;
   padding: 12px 20px;
@@ -86,7 +86,7 @@ input[type="submit"] {
 }
 
 button:hover,
-input[type="submit"]:hover {
+.section input[type="submit"]:hover {
   background-color: #004d40;
 }
 
@@ -120,7 +120,7 @@ input[type="submit"]:hover {
 
 /* Responsividade para tablets */
 @media (max-width: 1024px) {
-  section {
+  .section {
     padding: 30px;
   }
 
@@ -128,15 +128,15 @@ input[type="submit"]:hover {
     font-size: 1.6em;
   }
 
-  input[type="text"],
-  input[type="date"],
-  input[type="datetime-local"] {
+  .section input[type="text"],
+  .section input[type="date"],
+  .section input[type="datetime-local"] {
     padding: 10px;
     font-size: 0.95em;
   }
 
   button,
-  input[type="submit"],
+  .section input[type="submit"],
   .buttonClear {
     padding: 10px 15px;
     font-size: 0.95em;
@@ -148,7 +148,7 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
 
 
-  section {
+  .section {
     padding: 20px;
   }
 
@@ -160,15 +160,15 @@ input[type="submit"]:hover {
     gap: 15px;
   }
 
-  input[type="text"],
-  input[type="date"],
-  input[type="datetime-local"] {
+  .section input[type="text"],
+  .section input[type="date"],
+  .section input[type="datetime-local"] {
     padding: 10px;
     font-size: 0.9em;
   }
 
   button,
-  input[type="submit"],
+  .section input[type="submit"],
   .buttonClear {
     padding: 10px 15px;
     font-size: 0.9em;
@@ -179,7 +179,7 @@ input[type="submit"]:hover {
 
 /* Responsividade para telas muito pequenas (ex: celulares antigos) */
 @media (max-width: 480px) {
-  section {
+  .section {
     padding: 15px;
     margin: 20px auto;
   }
@@ -188,15 +188,15 @@ input[type="submit"]:hover {
     font-size: 1.2em;
   }
 
-  input[type="text"],
-  input[type="date"],
-  input[type="datetime-local"] {
+  .section input[type="text"],
+  .section input[type="date"],
+  .section input[type="datetime-local"] {
     padding: 8px;
     font-size: 0.85em;
   }
 
   button,
-  input[type="submit"],
+  .section input[type="submit"],
   .buttonClear {
     padding: 8px 12px;
     font-size: 0.85em;

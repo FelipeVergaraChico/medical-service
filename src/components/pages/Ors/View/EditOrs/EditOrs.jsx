@@ -281,7 +281,7 @@ export default function EditOrs() {
                     value={ors.dateDelivery}
                 />
 
-                <input type="submit" value="Enviar ORS" />
+                <input type="submit" value="Editar ORS" />
             </form>
         </section>
     );
