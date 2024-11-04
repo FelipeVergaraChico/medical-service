@@ -261,8 +261,8 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Select
-          name="* status"
-          text="Selecione o status da ORS"
+          name="status"
+          text="* Selecione o status da ORS"
           options={[
             "Em andamento",
             "Manutenção Preventiva",
@@ -272,7 +272,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
           value={ors.status || ""}
         />
 
-        <h1>Assinatura do Técnico *</h1>
+        <h1>Assinatura do Técnico</h1>
         <div
           className={styles.div_sig}
         >
@@ -289,7 +289,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         </button>
 
         <Input
-          text="* Nome do Assinante:"
+          text="Nome do Assinante:"
           type="text"
           name="nameTechSign"
           placeholder="Digite o nome do Assinante"
@@ -306,7 +306,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
           value={ors.dateDelivery || ""}
         />
 
-        <h1>Assinatura do Cliente *</h1>
+        <h1>Assinatura do Cliente</h1>
         <div
           className={styles.div_sig}
         >
@@ -323,7 +323,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         </button>
 
         <Input
-          text="* Nome do Assinante:"
+          text="Nome do Assinante:"
           type="text"
           name="nameClientSign"
           placeholder="Digite o nome do Assinante"
