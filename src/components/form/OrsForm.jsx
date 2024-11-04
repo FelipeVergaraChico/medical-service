@@ -17,11 +17,9 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   useEffect(() => {
     if (orsData?.clientSign && sigClientCanvas.current) {
       sigClientCanvas.current.fromDataURL(orsData.clientSign);
-      setOrs({ ...ors, clientSign: "" });
     }
     if (orsData?.technicalSign && sigTechnicalCanvas.current) {
       sigTechnicalCanvas.current.fromDataURL(orsData.technicalSign);
-      setOrs({ ...ors, technicalSign: "" });
     }
   }, [orsData]);
 
@@ -51,11 +49,13 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   // Função para limpar a assinatura do cliente
   function handleClickClearSignClient() {
     sigClientCanvas.current.clear();
+    setOrs({ ...ors, technicalSign: "" });
   }
 
   // Função para limpar a assinatura do técnico
   function handleClickClearSignTechnical() {
     sigTechnicalCanvas.current.clear();
+    setOrs({ ...ors, technicalSign: "" });
   }
 
 
