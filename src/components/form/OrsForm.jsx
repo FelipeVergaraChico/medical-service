@@ -10,8 +10,18 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   const [urlClient, setUrlClient] = useState("");
   const [urlTechnical, setUrlTechnical] = useState("");
 
-  const sigClientCanvas = useRef(orsData.clientSign || null);
-  const sigTechnicalCanvas = useRef(orsData.technicalSign || null);
+  const sigClientCanvas = useRef(null);
+  const sigTechnicalCanvas = useRef(null);
+
+  // Carrega as assinaturas do cliente e técnico no canvas quando `orsData` mudar
+  useEffect(() => {
+    if (orsData?.clientSign && sigClientCanvas.current) {
+      sigClientCanvas.current.fromDataURL(orsData.clientSign);
+    }
+    if (orsData?.technicalSign && sigTechnicalCanvas.current) {
+      sigTechnicalCanvas.current.fromDataURL(orsData.technicalSign);
+    }
+  }, [orsData]);
 
 
   // Função para capturar assinatura do cliente
@@ -52,7 +62,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
     setOrs({ ...ors, [e.target.name]: e.target.value });
   }
 
-  function submit(e){
+  function submit(e) {
     e.preventDefault()
 
     handleSubmit(ors)
