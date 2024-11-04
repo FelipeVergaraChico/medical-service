@@ -1,3 +1,7 @@
+.form {
+    width: 400px;
+}
+
 .form div{
     display: flex;
     flex-direction: column;
