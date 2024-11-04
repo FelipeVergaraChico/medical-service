@@ -15,7 +15,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
 
   useEffect(() => {
     console.log(ors, orsData)
-  })
+  }, [])
 
 
   // Função para capturar assinatura do cliente
