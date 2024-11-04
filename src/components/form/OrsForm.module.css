@@ -95,16 +95,11 @@ button:hover,
   display: flex;
   justify-content: center;
   height: 200px;
-  width: 100%;
-  padding: 10px;
 }
 
 .sigCanvas {
-  width: 100%;
-  max-width: 500px;
-  height: 200px;
   border: 2px dashed #00796b;
-  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 /* Responsividade para tablets */
