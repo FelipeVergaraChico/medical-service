@@ -49,13 +49,14 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
 
   // Funções para Inputs e Submits
   function handleChange(e) {
+    console.log(ors)
     setOrs({ ...ors, [e.target.name]: e.target.value });
   }
 
   function submit(e){
     e.preventDefault()
 
-    handleSubmit(pet)
+    handleSubmit(ors)
   }
 
   return (
