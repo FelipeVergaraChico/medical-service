@@ -54,7 +54,7 @@ export default function OrsForm({ HandleSubmit, orsData, btnText }) {
 
   return (
     <section className={styles.section}>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={HandleSubmit} className={styles.form}>
         <h1 className={styles.h1}>Dados do Cliente</h1>
         <Input
           text="Cliente:"
