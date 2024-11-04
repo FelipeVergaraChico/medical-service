@@ -3,22 +3,15 @@ import { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import styles from "./OrsForm.module.css";
 import Input from "./Input";
-import { useNavigate } from "react-router-dom";
-import apiInstance from "../../utils/api";
-import useFlashMessage from "../../hooks/useFlashMessage";
 import Select from "./Select";
 
-export default function OrsForm() {
-  const [ors, setOrs] = useState({});
+export default function OrsForm({ HandleSubmit, orsData, btnText }) {
+  const [ors, setOrs] = useState(orsData || {});
   const [urlClient, setUrlClient] = useState("");
   const [urlTechnical, setUrlTechnical] = useState("");
 
   const sigClientCanvas = useRef(null);
   const sigTechnicalCanvas = useRef(null);
-
-  const token = localStorage.getItem("token") || "";
-  const { setFlashMessage } = useFlashMessage();
-  const navigate = useNavigate();
 
 
   // Função para capturar assinatura do cliente
@@ -59,43 +52,17 @@ export default function OrsForm() {
     setOrs({ ...ors, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    console.log("Dados enviados no objeto ORS:", ors);
-
-    let msgType = "success";
-
-    const data = await apiInstance
-      .post("ors/add", ors, {
-        Authorization: `Bearer ${JSON.parse(token)}`,
-        "Content-Type": "multipart/form-data",
-      })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((err) => {
-        msgType = "error";
-        return err.response.data;
-      });
-
-
-    setFlashMessage(data.message, msgType);
-
-    if (msgType !== "error") {
-      navigate("/");
-    }
-  }
-
   return (
     <section className={styles.section}>
       <form onSubmit={handleSubmit} className={styles.form}>
         <h1 className={styles.h1}>Dados do Cliente</h1>
         <Input
-          text="* Cliente:"
+          text="Cliente:"
           type="text"
           name="client"
           placeholder="Digite o nome do cliente"
           handleOnChange={handleChange}
+          value={ors.client || ""}
         />
 
         <Input
@@ -104,14 +71,16 @@ export default function OrsForm() {
           name="contact"
           placeholder="Digite o Contato"
           handleOnChange={handleChange}
+          value={ors.contact || ""}
         />
 
         <Input
-          text="* Endereço:"
+          text="Endereço:"
           type="text"
           name="address"
           placeholder="Digite o Endereço"
           handleOnChange={handleChange}
+          value={ors.address || ""}
         />
 
         <Input
@@ -120,6 +89,7 @@ export default function OrsForm() {
           name="phone"
           placeholder="Digite o Telefone"
           handleOnChange={handleChange}
+          value={ors.phone || ""}
         />
 
         <Input
@@ -128,6 +98,7 @@ export default function OrsForm() {
           name="cnpj"
           placeholder="Digite o cnpj"
           handleOnChange={handleChange}
+          value={ors.cnpj || ""}
         />
 
         <Input
@@ -136,6 +107,7 @@ export default function OrsForm() {
           name="email"
           placeholder="Digite o Email"
           handleOnChange={handleChange}
+          value={ors.email || ""}
         />
 
         <Input
@@ -144,6 +116,7 @@ export default function OrsForm() {
           name="dateCall"
           placeholder="Digite a data e hora"
           handleOnChange={handleChange}
+          value={ors.dateCall || ""}
         />
 
         <Input
@@ -152,6 +125,7 @@ export default function OrsForm() {
           name="duration"
           placeholder="Digite a Duração do atendimento"
           handleOnChange={handleChange}
+          value={ors.duration || ""}
         />
 
         <h1>Dados do Equipamento</h1>
@@ -161,6 +135,7 @@ export default function OrsForm() {
           name="equipment"
           placeholder="Digite o Equipamento"
           handleOnChange={handleChange}
+          value={ors.equipment || ""}
         />
 
         <Input
@@ -169,22 +144,25 @@ export default function OrsForm() {
           name="local"
           placeholder="Digite o Local"
           handleOnChange={handleChange}
+          value={ors.local || ""}
         />
 
         <Input
-          text="* Marca:"
+          text="Marca:"
           type="text"
           name="brand"
           placeholder="Digite a marca"
           handleOnChange={handleChange}
+          value={ors.brand || ""}
         />
 
         <Input
-          text="* Modelo:"
+          text="Modelo:"
           type="text"
           name="model"
           placeholder="Digite o modelo"
           handleOnChange={handleChange}
+          value={ors.model || ""}
         />
 
         <Input
@@ -193,14 +171,16 @@ export default function OrsForm() {
           name="serial"
           placeholder="Digite o modelo"
           handleOnChange={handleChange}
+          value={ors.serial || ""}
         />
 
         <Input
-          text="* Numero de patrimônio:"
+          text="Numero de patrimônio:"
           type="text"
           name="inventoryNumber"
           placeholder="Digite o patrimonio"
           handleOnChange={handleChange}
+          value={ors.inventoryNumber || ""}
         />
 
         <Input
@@ -209,6 +189,7 @@ export default function OrsForm() {
           name="accessories"
           placeholder="Digite os Acessórios"
           handleOnChange={handleChange}
+          value={ors.accessories || ""}
         />
 
         <h1>Defeito informado pelo cliente</h1>
@@ -218,6 +199,7 @@ export default function OrsForm() {
           name="problem"
           placeholder="Digite o Problema"
           handleOnChange={handleChange}
+          value={ors.problem || ""}
         />
 
         <h1>Observações</h1>
@@ -227,16 +209,18 @@ export default function OrsForm() {
           name="observations"
           placeholder="Digite a observação"
           handleOnChange={handleChange}
+          value={ors.observations || ""}
         />
 
         <h1>Serviços Realizados</h1>
 
         <Input
-          text="* Serviços Realizados:"
+          text="Serviços Realizados"
           type="text"
           name="realizedServices"
           placeholder="Digite os Serviços Realizados"
           handleOnChange={handleChange}
+          value={ors.realizedServices || ""}
         />
 
         <h1>Componentes aplicados</h1>
@@ -246,6 +230,7 @@ export default function OrsForm() {
           name="quantity"
           placeholder="Digite a Quantitade:"
           handleOnChange={handleChange}
+          value={ors.quantity || ""}
         />
 
         <Input
@@ -254,6 +239,7 @@ export default function OrsForm() {
           name="descriptionOfParts"
           placeholder="Digite a Descrição da peça:"
           handleOnChange={handleChange}
+          value={ors.descriptionOfParts || ""}
         />
 
         <Select
@@ -290,6 +276,7 @@ export default function OrsForm() {
           name="nameTechSign"
           placeholder="Digite o nome do Assinante"
           handleOnChange={handleChange}
+          value={ors.nameTechSign || ""}
         />
 
         <Input
@@ -298,6 +285,7 @@ export default function OrsForm() {
           name="dateDelivery"
           placeholder="Digite a data aqui"
           handleOnChange={handleChange}
+          value={ors.dateDelivery || ""}
         />
 
         <h1>Assinatura do Cliente *</h1>
@@ -322,9 +310,10 @@ export default function OrsForm() {
           name="nameClientSign"
           placeholder="Digite o nome do Assinante"
           handleOnChange={handleChange}
+          value={ors.nameClientSign || ""}
         />
 
-        <input type="submit" value="Enviar ORS" />
+        <input type="submit" value={`${btnText}`} />
       </form>
     </section>
   );

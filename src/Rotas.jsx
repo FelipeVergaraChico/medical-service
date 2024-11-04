@@ -10,7 +10,7 @@ import Header from "./components/layout/Header";
 import ViewOrs from "./components/pages/Ors/View/ViewOrs";
 import Users from "./components/pages/Users/Users";
 import OrsUsers from "./components/pages/Users/OrsUsers";
-import EditOrs from "./components/pages/Ors/View/EditOrs/EditOrs";
+import EditOrs from "./components/pages/Ors/EditOrs";
 
 export default function Rotas() {
   return (
