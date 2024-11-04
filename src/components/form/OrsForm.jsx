@@ -75,7 +75,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
       <form onSubmit={submit} className={styles.form}>
         <h1 className={styles.h1}>Dados do Cliente</h1>
         <Input
-          text="Cliente:"
+          text="* Cliente:"
           type="text"
           name="client"
           placeholder="Digite o nome do cliente"
@@ -93,7 +93,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Input
-          text="Endereço:"
+          text="* Endereço:"
           type="text"
           name="address"
           placeholder="Digite o Endereço"
@@ -175,7 +175,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Input
-          text="Modelo:"
+          text="* Modelo:"
           type="text"
           name="model"
           placeholder="Digite o modelo"
@@ -193,7 +193,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Input
-          text="Numero de patrimônio:"
+          text="* Numero de patrimônio:"
           type="text"
           name="inventoryNumber"
           placeholder="Digite o patrimonio"
@@ -233,7 +233,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         <h1>Serviços Realizados</h1>
 
         <Input
-          text="Serviços Realizados"
+          text="* Serviços Realizados"
           type="text"
           name="realizedServices"
           placeholder="Digite os Serviços Realizados"
@@ -261,7 +261,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Select
-          name="status"
+          name="* status"
           text="Selecione o status da ORS"
           options={[
             "Em andamento",
@@ -298,7 +298,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
         />
 
         <Input
-          text="Data de entrega:"
+          text="* Data de entrega:"
           type="date"
           name="dateDelivery"
           placeholder="Digite a data aqui"
