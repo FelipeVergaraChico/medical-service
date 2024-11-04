@@ -14,8 +14,10 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   const sigTechnicalCanvas = useRef(null);
 
   useEffect(() => {
-    console.log(ors, orsData)
-  }, [orsData])
+    if (orsData) {
+      setOrs(orsData);
+    }
+  }, [orsData]);
 
 
   // Função para capturar assinatura do cliente
@@ -59,9 +61,7 @@ export default function OrsForm({ handleSubmit, orsData, btnText }) {
   function submit(e){
     e.preventDefault()
 
-    console.log(ors)
-
-    //handleSubmit(ors)
+    handleSubmit(ors)
   }
 
   return (
