@@ -135,26 +135,30 @@ export const GeneratePDF = () => {
     componentsHeight += addField("Quantidade", or.quantify, sectionRightX, componentsHeight);
     componentsHeight += addField("Status", or.status, sectionRightX, componentsHeight);
 
-    // Ajusta a posição da Data de Entrega na seção de Componentes Aplicados
-    componentsHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, componentsHeight);
-
-    // Ajusta a altura atual para as assinaturas
+    // Ajusta a altura atual para um espaço compacto antes das assinaturas
     currentHeight = Math.max(serviceHeight, componentsHeight);
-    currentHeight += 40; // Espaço extra antes das assinaturas
+    currentHeight += 10; // Reduzido para 10 para menos espaço
 
-    // Assinaturas
+    // Adiciona a seção de Assinaturas e a Data de Entrega na mesma linha
+    addSectionTitle("Assinaturas", marginLeft, currentHeight);  // Assinaturas no lado esquerdo
+
+    // Posiciona a Data de Entrega na mesma linha, alinhada à direita
+    doc.setFontSize(11);
+    doc.text(`Data de Entrega: ${formatDateDelivery(or.dateDelivery)}`, 160, currentHeight);  // Ajuste 160 para posicionamento à direita
+
+    currentHeight += 10; // Pequeno espaço para colocar as assinaturas abaixo
+
+    // Renderizar Assinaturas
     if (or.clientSign && or.technicalSign) {
-      addSectionTitle("Assinaturas", marginLeft, currentHeight);
-
       // Assinatura do Cliente
-      doc.addImage(or.clientSign, "PNG", marginLeft, currentHeight + 10, 50, 30);
-      doc.text("Assinatura do Cliente", marginLeft, currentHeight + 45);
-      doc.text(or.nameClientSign || "N/A", marginLeft, currentHeight + 50); // Nome do cliente
+      doc.addImage(or.clientSign, "PNG", marginLeft, currentHeight + 5, 50, 30);
+      doc.text("Assinatura do Cliente", marginLeft, currentHeight + 40);
+      doc.text(or.nameClientSign || "N/A", marginLeft, currentHeight + 45); // Nome do cliente
 
       // Assinatura do Técnico
-      doc.addImage(or.technicalSign, "PNG", marginLeft + 100, currentHeight + 10, 50, 30);
-      doc.text("Assinatura do Técnico", marginLeft + 100, currentHeight + 45);
-      doc.text(or.nameTechSign || "N/A", marginLeft + 100, currentHeight + 50); // Nome do técnico
+      doc.addImage(or.technicalSign, "PNG", marginLeft + 100, currentHeight + 5, 50, 30);
+      doc.text("Assinatura do Técnico", marginLeft + 100, currentHeight + 40);
+      doc.text(or.nameTechSign || "N/A", marginLeft + 100, currentHeight + 45); // Nome do técnico
     }
 
     doc.save(`${or._id}.pdf`); // Salva o PDF
