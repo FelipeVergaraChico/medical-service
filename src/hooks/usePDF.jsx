@@ -132,9 +132,13 @@ export const GeneratePDF = () => {
     let quantityHeight = currentHeight + 10;
     addSectionTitle("Componentes Aplicados", sectionRightX, currentHeight);
     quantityHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, quantityHeight);
+    quantityHeight += addField("Quantidade", or.quantify, sectionRightX, quantityHeight);
+    quantityHeight += addField("Status", or.status, sectionRightX, quantityHeight);
+
+
     
 
-    currentHeight += 40; // Espaço extra antes das assinaturas
+    currentHeight += 60; // Espaço extra antes das assinaturas
 
     let dateDeliveryHeight = currentHeight + 20;
     dateDeliveryHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, serviceHeight);
