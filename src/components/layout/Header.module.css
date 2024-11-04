@@ -47,12 +47,12 @@
 }
 
 .header a {
+  align-items: center;
   color: white;
   text-decoration: none;
   font-size: 24px;
   transition: color 0.3s;
   display: flex;
-  align-items: center;
   justify-content: center; /* Centraliza o texto dentro do link */
   width: 100%; /* Faz com que o link ocupe toda a largura do item */
   gap: 10px;
@@ -74,7 +74,7 @@
 @media (max-width: 768px) {
   .header .right-links {
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 0;
     background-color: #00796b;
     width: 100%;
@@ -101,7 +101,7 @@
   .header .right-links li {
     border-bottom: 1px solid #004d40; /* Adiciona uma borda inferior a cada item */
     width: 100%;
-    padding: 1em 0;
+    height: 65px;
   }
 
   .header .right-links li a {
