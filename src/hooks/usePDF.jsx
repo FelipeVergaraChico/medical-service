@@ -17,7 +17,7 @@ export const GeneratePDF = () => {
     // Carregar logo como base64 para evitar problemas de carregamento
     const logoUrl = "/pantanal-removebg-preview.png"; // URL da sua logo
     const logoImage = await loadLogoImage(logoUrl);
-    
+
     // Convertendo a imagem para Base64
     const canvas = document.createElement('canvas');
     canvas.width = logoImage.width;
@@ -35,7 +35,7 @@ export const GeneratePDF = () => {
       const formattedTime = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes()
         .toString()
         .padStart(2, '0')}`;
-      
+
       return `${formattedDate}--${formattedTime}`;
     };
 
@@ -44,7 +44,7 @@ export const GeneratePDF = () => {
       const [year, month, day] = dateString.split('-');
       // Retorna a data no formato dd/mm/yyyy
       return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
-  };
+    };
 
     const marginLeft = 10;
     let currentHeight = 40; // Starting height position (ajuste para não sobrepor a logo)
@@ -62,7 +62,7 @@ export const GeneratePDF = () => {
     const addField = (label, value, x, y, maxWidth = 60) => {
       doc.setFontSize(11);
       doc.setFont("helvetica", "normal");
-      
+
       // Desenha o label seguido diretamente pelo valor
       const textLines = doc.splitTextToSize(value || "N/A", maxWidth);
       doc.text(`${label}: ${textLines[0]}`, x, y);
@@ -85,7 +85,7 @@ export const GeneratePDF = () => {
     addSectionTitle("Dados do Equipamento", sectionRightX, currentHeight);
     currentHeight += 10;
 
-    if(or.dateCall){
+    if (or.dateCall) {
       or.dateCall = formatDate(or.dateCall)
     }
 
@@ -117,44 +117,44 @@ export const GeneratePDF = () => {
     let problemHeight = currentHeight + 10;
     addSectionTitle("Defeito Informado", sectionLeftX, currentHeight);
     problemHeight += addField("Defeito", or.problem, sectionLeftX, problemHeight);
-    
+
     let observationsHeight = currentHeight + 10;
     addSectionTitle("Observações", sectionRightX, currentHeight);
     observationsHeight += addField("Observações", or.observations, sectionRightX, observationsHeight);
 
     currentHeight += 30; // Espaço para passar para a próxima seção
 
-    // Serviços Realizados lado a lado
+    // Serviços Realizados e Componentes Aplicados lado a lado
     let serviceHeight = currentHeight + 10;
     addSectionTitle("Serviços Realizados", sectionLeftX, currentHeight);
     serviceHeight += addField("Serviços", or.realizedServices, sectionLeftX, serviceHeight);
-    
-    let quantityHeight = currentHeight + 10;
+
+    let componentsHeight = currentHeight + 10;
     addSectionTitle("Componentes Aplicados", sectionRightX, currentHeight);
-    quantityHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, quantityHeight);
-    quantityHeight += addField("Quantidade", or.quantify, sectionRightX, quantityHeight);
-    quantityHeight += addField("Status", or.status, sectionRightX, quantityHeight);
+    componentsHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, componentsHeight);
+    componentsHeight += addField("Quantidade", or.quantify, sectionRightX, componentsHeight);
+    componentsHeight += addField("Status", or.status, sectionRightX, componentsHeight);
 
+    // Ajusta a posição da Data de Entrega na seção de Componentes Aplicados
+    componentsHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, componentsHeight);
 
-    
-
+    // Ajusta a altura atual para as assinaturas
+    currentHeight = Math.max(serviceHeight, componentsHeight);
     currentHeight += 40; // Espaço extra antes das assinaturas
 
-    let dateDeliveryHeight = currentHeight + 20;
-    dateDeliveryHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, serviceHeight);
     // Assinaturas
     if (or.clientSign && or.technicalSign) {
-      addSectionTitle("Assinaturas", marginLeft, serviceHeight);
+      addSectionTitle("Assinaturas", marginLeft, currentHeight);
 
       // Assinatura do Cliente
-      doc.addImage(or.clientSign, "PNG", marginLeft, serviceHeight + 10, 50, 30);
-      doc.text("Assinatura do Cliente", marginLeft, serviceHeight + 45);
-      doc.text(or.nameClientSign || "N/A", marginLeft, serviceHeight + 50); // Nome do cliente
+      doc.addImage(or.clientSign, "PNG", marginLeft, currentHeight + 10, 50, 30);
+      doc.text("Assinatura do Cliente", marginLeft, currentHeight + 45);
+      doc.text(or.nameClientSign || "N/A", marginLeft, currentHeight + 50); // Nome do cliente
 
       // Assinatura do Técnico
-      doc.addImage(or.technicalSign, "PNG", marginLeft + 100, serviceHeight + 10, 50, 30);
-      doc.text("Assinatura do Técnico", marginLeft + 100, serviceHeight + 45);
-      doc.text(or.nameTechSign || "N/A", marginLeft + 100, serviceHeight + 50); // Nome do técnico
+      doc.addImage(or.technicalSign, "PNG", marginLeft + 100, currentHeight + 10, 50, 30);
+      doc.text("Assinatura do Técnico", marginLeft + 100, currentHeight + 45);
+      doc.text(or.nameTechSign || "N/A", marginLeft + 100, currentHeight + 50); // Nome do técnico
     }
 
     doc.save(`${or._id}.pdf`); // Salva o PDF
