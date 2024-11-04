@@ -43,7 +43,7 @@ const SearchComponent = ({setOrs, setTotalPages, idUserParams}) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Buscar Dados</h2>
       {/* Inputs para os filtros */}
       <form onSubmit={fetchData} className={styles.form}>
