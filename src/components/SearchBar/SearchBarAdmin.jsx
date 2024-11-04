@@ -3,6 +3,8 @@ import { useState } from 'react';
 import apiInstance from '../../utils/api';
 import useFlashMessage from "../../hooks/useFlashMessage";
 
+import styles from "./SearchBar.module.css";
+
 const SearchComponent = ({setOrs, setTotalPages, idUserParams}) => {
   const token = localStorage.getItem("token") || "";
   // Estados para os filtros e resultados
@@ -44,7 +46,7 @@ const SearchComponent = ({setOrs, setTotalPages, idUserParams}) => {
     <div>
       <h2>Buscar Dados</h2>
       {/* Inputs para os filtros */}
-      <form onSubmit={fetchData}>
+      <form onSubmit={fetchData} className={styles.form}>
         <div>
             <label>Cliente: </label>
             <input
