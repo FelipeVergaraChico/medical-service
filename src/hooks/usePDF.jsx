@@ -138,7 +138,7 @@ export const GeneratePDF = () => {
 
     
 
-    currentHeight += 60; // Espaço extra antes das assinaturas
+    currentHeight += 100; // Espaço extra antes das assinaturas
 
     let dateDeliveryHeight = currentHeight + 20;
     dateDeliveryHeight += addField("Data de Entrega", formatDateDelivery(or.dateDelivery), sectionRightX, serviceHeight);
