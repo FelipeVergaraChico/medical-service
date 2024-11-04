@@ -133,7 +133,7 @@ export const GeneratePDF = () => {
     let componentsHeight = currentHeight + 10;
     addSectionTitle("Componentes Aplicados", sectionRightX, currentHeight);
     componentsHeight += addField("Descrição das Peças", or.descriptionOfParts, sectionRightX, componentsHeight);
-    componentsHeight += addField("Quantidade", or.quantify, sectionRightX, componentsHeight);
+    componentsHeight += addField("Quantidade", or.quantity, sectionRightX, componentsHeight);
     componentsHeight += addField("Status", or.status, sectionRightX, componentsHeight);
 
     // Ajusta a altura atual para um espaço compacto antes das assinaturas
